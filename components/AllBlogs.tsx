@@ -1,38 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { PinContainer } from "./ui/Pin";
 import { FaLocationArrow } from "react-icons/fa6";
+import { PinContainer } from "./ui/Pin";
 import React from "react";
 import { blogs, blog_count } from "../data/blogData";
-import BlogPage from "../app/blogs/page"
 
-const Blogssec = () => {
-  // Set the ID range you want to loop over
-  const startID = blog_count - 2;
-  const endID = blog_count;
-
-  // Filter blogs based on the ID range
-  const filteredBlogs = blogs.filter((blog) => blog.id >= startID && blog.id <= endID);
+const AllBlogssec = () => {
+  const filteredBlogs = blogs.filter((blog) => blog.id >= 1 && blog.id <= blog_count);
 
   return (
     <div className="my-[150px]" id="recentprojects">
-      <Link href="/blogs">
-        <h1 className="heading mb-[60px] flex items-center justify-center gap-3">
-          Read Our Recent Blogs
-          <FaLocationArrow className="text-purple-300 text-xl sm:text-2xl md:text-3xl" />
-        </h1>
-      </Link>
-
-
-
+      <h1 className="heading mb-[60px]">
+        Read Our Recent <span className="text-purple">Blogs</span>
+      </h1>
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 items-center justify-center p-4 gap-16 mt-10">
         {filteredBlogs.map((blog) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={blog.id}
           >
-            <Link href={`/blogs/${blog.id}`}>
+            <Link href={`/blogs/${blog.id.toString()}`}>
               <PinContainer title={blog.heading} href={`/blogs/${blog.id}`}>
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                   <div
@@ -65,7 +53,7 @@ const Blogssec = () => {
                 <div className="flex items-center justify-between mt-7 mb-3">
                   <div className="flex items-center">
                     <div className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center">
-                      <img src="/icon.jpg" alt="icon" className="p-2" />
+                      <img src="/icon.png" alt="icon" className="p-2" />
                     </div>
                   </div>
 
@@ -83,4 +71,4 @@ const Blogssec = () => {
   );
 };
 
-export default Blogssec;
+export default AllBlogssec;

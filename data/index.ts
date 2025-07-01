@@ -3,6 +3,7 @@ export const navItems = [
   { name: "Services", link: "#services" },
   { name: "Blogs", link: "#recentprojects" },
   { name: "Contact", link: "#contact" },
+  { name: "Gallery", link: "#gallery"},
 ];
 
 
