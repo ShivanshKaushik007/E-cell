@@ -57,8 +57,8 @@ ecell-website/
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/ecell-website.git
-cd ecell-website
+git clone https://github.com/ShivanshKaushik007/E-cell.git
+cd E-cell
 npm install
 npm run dev
 ```
